@@ -1,0 +1,154 @@
+.taskname{
+    font-family: 'Orbitron', sans-serif;
+    text-align: left;
+    color:black;
+}
+
+.taskdesc{
+    text-align: left;
+    color:rgb(46, 46, 46);
+    margin: 0;
+    display: inline-block;
+    width: 90%;
+}
+
+
+h1{
+    color: rgb(42, 255, 35);
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+body{
+    text-align: center;
+    background-color: rgb(31, 31, 31);
+    font-family: 'Roboto', sans-serif;
+    color: whitesmoke;
+}
+
+#datetime{
+    display: inline;
+    font-size: 60%;
+}
+
+li{
+    background-color: rgb(42, 255, 35);
+    width: 70%;
+    margin: 0 auto 5px auto ;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 60%;
+    text-align: left;
+}
+
+.taskfoot{
+    display: inline-block;
+}
+
+.foot{
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+.li:hover{
+    background-color: rgb(42, 255, 35);
+}
+
+.head-nav li{
+    background-color: #05ca05;
+}
+
+
+ .head-nav li:hover{
+	 background: rgb(70, 253, 64);
+	 
+}
+ .head-nav li:hover a {
+	 color: #000000;
+}
+ .head-nav li:before {
+	 position: absolute;
+	 left: -0.925rem;
+	 top: 0;
+	 width: 0.925rem;
+	 height: 100%;
+	 content: "";
+	 background: #087508;
+	 z-index: 1;
+	 transition: background 400ms;
+}
+ .head-nav ul {
+	 margin-top: 1.85rem;
+	 margin-right: 0;
+	 margin-bottom: 0;
+	 margin-left: 0;
+	 padding: 0;
+	 list-style: none;
+}
+ .head-nav li {
+	 position: relative;
+	 clear: both;
+	 width: 100%;
+	 padding: 0;
+	 transition: background 400ms;
+}
+ .head-nav li a{
+	 display: flex;
+	 padding-top: 2vh;
+	 padding-bottom: 2vh;
+}
+
+
+
+ .head-nav a {
+	 align-items: center;
+	 width: 100%;
+	 color: #fefefe;
+	 text-decoration: none;
+	 transition: color 400ms;
+}
+ .head-nav a span {
+     font-family: 'Roboto', sans-serif;
+	 opacity: 0;
+	 white-space: nowrap;
+	 transition: opacity 400ms;
+     margin-left: 3px;
+}
+
+ .main-head {
+	 position: fixed;
+	 bottom: 0;
+	 width: 25px;
+	 height: 100%;
+	 z-index: 1;
+	 background: rgb(10, 136, 6);
+	 transition: width 400ms;
+}
+ .main-head:hover {
+	 width: 110px;
+}
+ .main-head:hover + .wrap-all-the-things {
+	 transform: translateX(85px);
+	 opacity: 0.4;
+}
+
+ .main-head:hover .head-nav span {
+	 opacity: 100;
+}
+
+ .wrap-all-the-things {
+	 min-height: 100%;
+	 height: 100%;
+	 padding-left: 140px;
+	 margin-top: 0;
+     padding-left: 70px;
+	 transition: transform 400ms, opacity 400ms;
+}
+
+.icon{
+    width: 20px;
+    height: 20px;
+    z-index: 20;
+    display: inline;
+}
