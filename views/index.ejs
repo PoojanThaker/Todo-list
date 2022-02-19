@@ -51,20 +51,26 @@
     <ul class="task">
        <% for(var i=0;i<data.tasks.length;i++) { %>
         <li>
-            <div class="taskname">
-                <%= data.tasks[i].name %>
-            </div>
-            <p class="taskdesc">
-                <%=data.tasks[i].description%>
-            </p>
-            <input type="checkbox" name="done" id="done">
-            <div class="taskfoot">
-            <p class="foot">
-                Estimated duration
+          
+            <label class="tasks-list-item">
+                <div class="taskname">
+                    <%= data.tasks[i].name %>
+                </div>
+                <p class="taskdesc">
+                    <%=data.tasks[i].description%>
                 </p>
-            <p class="foot">Next occurence</p>
-            <p class="foot">Due date</p>
-            </div>
+                <input type="checkbox" name="task_2" value="1" class="tasks-list-cb" checked>
+                <span class="tasks-list-mark"></span>
+                <div class="taskfoot">
+                    <p class="foot">
+                        Estimated duration
+                        </p>
+                    <p class="foot">Next occurence</p>
+                    <p class="foot">Due date</p>
+                    </div>
+            </label>
+  
+         
         </li>
         <% } %>
     </ul>
