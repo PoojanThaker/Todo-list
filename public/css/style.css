@@ -4,6 +4,14 @@
     color:black;
 }
 
+html {
+  zoom: 170%;
+}
+
+.label {
+  font-weight: bolder;
+}
+
 .taskdesc{
     text-align: left;
     color:rgb(46, 46, 46);
@@ -12,12 +20,23 @@
     padding-right:10px;
     overflow-wrap:break-word;
     text-align: justify;
+    width: 88%;
     /* float: left; */
+}
+
+form {
+  position: absolute;
 }
 
 
 h1{
     color: rgb(42, 255, 35);
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+h2 {
     font-family: 'Orbitron', sans-serif;
     text-align: center;
     margin-bottom: 0;
@@ -53,6 +72,7 @@ li{
 .foot{
     display: inline-block;
     margin-bottom: 0;
+    margin-right: 10px;
 }
 
 .li:hover{
@@ -102,8 +122,6 @@ li{
 	 padding-top: 2vh;
 	 padding-bottom: 2vh;
 }
-
-
 
  .head-nav a {
 	 align-items: center;
