@@ -54,6 +54,21 @@ body{
     font-size: 60%;
 }
 
+.newtask {
+  display: inline-block;
+  /* float: left; */
+}
+
+.newtaskDiv {
+  display: block;
+}
+
+.newtaskForm {
+  text-align: center;
+  margin: auto;
+  width: 92%;
+}
+
 li{
     background-color: rgb(42, 255, 35);
     width: 70%;

@@ -46,42 +46,36 @@
 
     <h2><%= data.title %></h2>
 
-    <button>Add a task</button>
-    <ul class="task">
-        <li>
-            <p>Hello</p>
-            
-        </li>
-    </ul>
-    <ul class="task">
-       <% for(var i=0;i<data.tasks.length;i++) { %>
-        <li>
-            <label class="tasks-list-item">
-                <div class="taskname">
-                    <%= data.tasks[i].name %>
+    <form action="/newtask" method="post" class="newtaskForm">
+                <div class="newtaskDiv">
+                    <label class="tasks-list-item newtask">Task Name</label>
+                    <input type="text" class="newtask">
                 </div>
-                <p class="taskdesc">
-                    <%=data.tasks[i].description%>
-                </p>
-                <% if(data.title != "Completed Tasks") {%>
-                    <form action="/" method="post">
-                        <input type="checkbox" onchange="this.form.submit()" name="id" value=<%= data.tasks[i].id %> class="tasks-list-cb">
-                    </form>
-                    <!-- <input type="checkbox" name="task_checkbox" id="task_checkbox" value="1" class="tasks-list-cb" checked> -->
-                    <span class="tasks-list-mark"></span>
-                <% } %>
-                <div class="taskfoot">
-                    <p class="foot"> <span class="label"> Estimated duration </span> <%=data.tasks[i].estimatedDuration%></p>
-                    <p class="foot"> <span class="label">Next occurrence </span> <%=data.tasks[i].occurrence%></p>
-                    <p class="foot"> <span class="label">Due date </span> <%=data.tasks[i].dueDate%> </p>
-                    <p class="foot"> <span class="label">Priority </span> <%=data.tasks[i].priority%> </p>
-                    </div>
-            </label>
-  
-         
-        </li>
-        <% } %>
-    </ul>
+                <div class="newtaskDiv">
+                    <label class="tasks-list-item newtask">Task Description</label>
+                    <input type="text" class="newtask">
+                </div>
+                <div class="newtaskDiv">
+                    <label class="tasks-list-item newtask">Estimated Duration</label>
+                    <input type="number" class="newtask">
+                </div>
+                <div class="newtaskDiv">
+                    <label class="tasks-list-item newtask">Active By</label>
+                    <input type="date" class="newtask">
+                </div>
+                <div class="newtaskDiv">
+                    <label class="tasks-list-item newtask">Occurrence</label>
+                    <input type="number" class="newtask">
+                </div>
+                <div class="newtaskDiv">
+                    <label class="tasks-list-item newtask">Due Date</label>
+                    <input type="date" class="newtask">
+                </div>
+                <div class="newtaskDiv">
+                    <label class="tasks-list-item newtask">Priority</label>
+                    <input type="number" class="newtask">
+                </div>
+            </form>
     <script src="scripts/frontEnd.js"></script>
 </div>
 </body>

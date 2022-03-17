@@ -50,6 +50,10 @@ app.get("/completedTasks",function(req,res){
     res.render('index',{data:{moment:moment, title: "Completed Tasks", tasks:completedTasks,}});
 })
 
+app.get("/newtask",function(req,res){
+    res.render('add',{data:{moment:moment, title: "New Task",}});
+})
+
 app.get("/highPriority",function(req,res){
     var highPriority = [];
     for(var i=0; i<tasksvar.length; i++) {
