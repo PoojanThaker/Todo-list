@@ -61,6 +61,7 @@ body{
 
 .newtaskDiv {
   display: block;
+  margin: 8px;
 }
 
 .newtaskForm {
@@ -250,22 +251,13 @@ li{
   box-shadow: 0 6px #8c959d, 0 -6px #8c959d;
 }
 
-.tasks-list-item {
-  display: block;
-  padding: 6px 7px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.tasks-list-item + .tasks-list-item {
-  border-top: 1px solid #f0f2f3;
-}
-
+ 
 .tasks-list-cb {
   display: none;
+}
+
+h3{
+  position: absolute;
 }
 
 .tasks-list-mark {

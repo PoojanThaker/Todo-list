@@ -45,35 +45,37 @@
     </div>
 
     <h2><%= data.title %></h2>
-
     <form action="/newtask" method="post" class="newtaskForm">
                 <div class="newtaskDiv">
                     <label class="tasks-list-item newtask">Task Name</label>
-                    <input type="text" class="newtask">
+                    <input type="text" class="newtask" name="name">
                 </div>
                 <div class="newtaskDiv">
                     <label class="tasks-list-item newtask">Task Description</label>
-                    <input type="text" class="newtask">
+                    <input type="text" class="newtask"  name="description">
                 </div>
                 <div class="newtaskDiv">
                     <label class="tasks-list-item newtask">Estimated Duration</label>
-                    <input type="number" class="newtask">
+                    <input type="number" class="newtask"  name="estimatedDuration">
                 </div>
                 <div class="newtaskDiv">
                     <label class="tasks-list-item newtask">Active By</label>
-                    <input type="date" class="newtask">
+                    <input type="date" class="newtask"  name="activeBy">
                 </div>
                 <div class="newtaskDiv">
                     <label class="tasks-list-item newtask">Occurrence</label>
-                    <input type="number" class="newtask">
+                    <input type="number" class="newtask"  name="occurrence">
                 </div>
                 <div class="newtaskDiv">
                     <label class="tasks-list-item newtask">Due Date</label>
-                    <input type="date" class="newtask">
+                    <input type="date" class="newtask"  name="dueDate">
                 </div>
                 <div class="newtaskDiv">
                     <label class="tasks-list-item newtask">Priority</label>
-                    <input type="number" class="newtask">
+                    <input type="number" class="newtask"  name="priority">
+                </div>
+                <div class="newtaskDiv">
+                    <input type="Submit" value="Submit">
                 </div>
             </form>
     <script src="scripts/frontEnd.js"></script>

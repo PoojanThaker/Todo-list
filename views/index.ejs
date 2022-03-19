@@ -43,20 +43,25 @@
     <date><%= data.moment().format('Do MMMM, YYYY'); %></date>
     <time><%= data.moment().format('h:mm a'); %></time>
     </div>
-
+    
     <h2><%= data.title %></h2>
+   
 
-    <button>Add a task</button>
+  
+        
+    
+
     <ul class="task">
         <li>
-            <p>Hello</p>
-            
+            <label>
+                <div class="taskname">
+                    <a href="/newtask"> Add task</a>
+                </div>
+            </label>       
         </li>
-    </ul>
-    <ul class="task">
        <% for(var i=0;i<data.tasks.length;i++) { %>
         <li>
-            <label class="tasks-list-item">
+            <label>
                 <div class="taskname">
                     <%= data.tasks[i].name %>
                 </div>
@@ -64,10 +69,9 @@
                     <%=data.tasks[i].description%>
                 </p>
                 <% if(data.title != "Completed Tasks") {%>
-                    <form action="/" method="post">
+                    <form action="/" method="post">  
                         <input type="checkbox" onchange="this.form.submit()" name="id" value=<%= data.tasks[i].id %> class="tasks-list-cb">
-                    </form>
-                    <!-- <input type="checkbox" name="task_checkbox" id="task_checkbox" value="1" class="tasks-list-cb" checked> -->
+                    </form> 
                     <span class="tasks-list-mark"></span>
                 <% } %>
                 <div class="taskfoot">
@@ -76,9 +80,7 @@
                     <p class="foot"> <span class="label">Due date </span> <%=data.tasks[i].dueDate%> </p>
                     <p class="foot"> <span class="label">Priority </span> <%=data.tasks[i].priority%> </p>
                     </div>
-            </label>
-  
-         
+            </label>       
         </li>
         <% } %>
     </ul>

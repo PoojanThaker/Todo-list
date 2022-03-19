@@ -11,18 +11,19 @@ class Task{
     }
 }
 
+var idCounter = 0;
+
 var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
 var moment = require('moment');
 const { redirect } = require("express/lib/response");
 
-// var tasksvar = [{'name':'Buy shit','description':"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting."},{'name':'Name1','description':'description2'}];
-var tasksvar = [];
-let task1 = new Task('Buy shit', "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.", 10, "27-02-2022", 5, "10-03-2022", 100, 1);
-tasksvar.push(task1);
-let task2= new Task('Name1', "decription", 10, "27-02-2022", 5, "10-03-2022", 210, 2);
-tasksvar.push(task2);
+var allTasks = [];
+let task1 = new Task('Buy shit', "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.", 10, "27-02-2022", 5, "10-03-2022", 100, idCounter++);
+allTasks.push(task1);
+let task2= new Task('Name1', "decription", 10, "27-02-2022", 5, "10-03-2022", 210, idCounter++);
+allTasks.push(task2);
 
 var completedTasks = [];
 
@@ -41,8 +42,8 @@ function compare_priority(a, b){
 }
 
 app.get("/",function(req,res){
-    tasksvar.sort(compare_priority);
-    res.render('index',{data:{moment:moment, title: "All Tasks", tasks:tasksvar,}});
+    allTasks.sort(compare_priority);
+    res.render('index',{data:{moment:moment, title: "All Tasks", tasks:allTasks,}});
 })
 
 app.get("/completedTasks",function(req,res){
@@ -56,9 +57,9 @@ app.get("/newtask",function(req,res){
 
 app.get("/highPriority",function(req,res){
     var highPriority = [];
-    for(var i=0; i<tasksvar.length; i++) {
-        if(tasksvar[i].priority >= 200) {
-            highPriority.push(tasksvar[i]);
+    for(var i=0; i<allTasks.length; i++) {
+        if(allTasks[i].priority >= 200) {
+            highPriority.push(allTasks[i]);
         }
     }
     highPriority.sort(compare_priority);
@@ -67,17 +68,25 @@ app.get("/highPriority",function(req,res){
 
 app.post("/", function(req,res){
     var index=req.body.id;
-    for(var i=0;i<tasksvar.length;i++)
+    for(var i=0;i<allTasks.length;i++)
     {
-        if(tasksvar[i].id == index) {
-            completedTasks.push(tasksvar[i]);
-            tasksvar.splice(i,1);
+        if(allTasks[i].id == index) {
+            completedTasks.push(allTasks[i]);
+            allTasks.splice(i,1);
         }
     }
-    console.log(tasksvar);
+    console.log(allTasks);
     console.log(completedTasks);
     res.redirect('/');
 })
+
+app.post("/newtask", function(req,res){
+    console.log(req.body);
+    let newTask = new Task(req.body.name, req.body.description, req.body.estimatedDuration, req.body.activeBy, req.body.occurrence, req.body.dueDate, req.body.priority, idCounter++);
+    allTasks.push(newTask);
+    res.redirect("/");
+})
+
 
 app.listen(3000);
 
